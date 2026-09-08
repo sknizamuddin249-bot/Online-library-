@@ -1,0 +1,232 @@
+import { Book, Banner, StoreSettings, BookReview } from '../types';
+
+export const DEFAULT_LOGO_DATA = '/logo.svg';
+
+export const STORE_CONTACT = {
+  phone: '6297744675',
+  whatsappNumber: '916297744675',
+  email: 'officialonlinelibrary@gmail.com',
+  instagram: 'onlinelibrary17',
+  instagramUrl: 'https://instagram.com/onlinelibrary17',
+  facebookUrl: 'https://facebook.com',
+  storeAddress: 'Online Library & Book Store, West Bengal, India',
+  mapLocationUrl: 'https://maps.google.com/?q=Online+Library+Book+Store',
+  upiId: '8001743646@nyes',
+  upiName: 'Online Library Store',
+  adminPassword: 'sknizamuddin8001743646'
+};
+
+export const defaultSettings: StoreSettings = {
+  name: 'Online Library',
+  sub: 'Online Book Store & Library',
+  logoImg: DEFAULT_LOGO_DATA,
+  primaryColor: '#0B1B3D',
+  accentColor: '#FF5722',
+  bgColor: '#F5F7FA',
+  bannerSize: 'standard',
+  bannerCustomHeight: 280,
+  bannerCustomHeightMobile: 180,
+  bannerFit: 'cover',
+  bannerRadius: '2xl',
+  upiId: STORE_CONTACT.upiId,
+  upiName: STORE_CONTACT.upiName,
+  phone: STORE_CONTACT.phone,
+  whatsappNumber: STORE_CONTACT.whatsappNumber,
+  email: STORE_CONTACT.email,
+  facebookUrl: STORE_CONTACT.facebookUrl,
+  instagramUrl: STORE_CONTACT.instagramUrl,
+  storeAddress: STORE_CONTACT.storeAddress,
+  mapLocationUrl: STORE_CONTACT.mapLocationUrl,
+  onlineDeliveryCharge: 50,
+  codDeliveryCharge: 75,
+};
+
+export const defaultBanners: Banner[] = [
+  { id: 1, img: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&auto=format&fit=crop&q=80', title: 'Grand Book Fair & Special Discounts' },
+  { id: 2, img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&auto=format&fit=crop&q=80', title: 'Discover Timeless Classics & Best-Sellers' },
+  { id: 3, img: 'https://images.unsplash.com/photo-1507842229451-79b1be886a29?w=1200&auto=format&fit=crop&q=80', title: 'Free Home Delivery on Eligible Orders' },
+];
+
+export const defaultBooks: Book[] = [
+  {
+    id: 1,
+    title: 'Madhyamik Class 10 All Subjects Complete Guide & Suggestion Set',
+    description: 'Special Academic Guide for Class 10 Board Exams. Includes detailed chapter-wise notes for Bengali, English, Math, Physical Science, Life Science, History, and Geography with model test papers and 100% common suggestions.',
+    price: 599,
+    oldPrice: 850,
+    stock: 15,
+    img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&auto=format&fit=crop&q=80',
+    category: 'Class 9-10 (Madhyamik)',
+    targetClass: 'Class 10',
+    rating: 4.9,
+    reviewsCount: 24,
+    isCombo: true,
+    comboBadge: 'BOARD EXAM COMBO • SAVE 30%',
+    comboItems: [
+      'Madhyamik All-in-One Suggestion Guide 2026',
+      'Bengali & English Grammar Practice Workbook',
+      'Mathematics Step-by-Step Solution & Formula Chart',
+      '10 Model Question Papers with Answer Key',
+    ],
+  },
+  {
+    id: 2,
+    title: 'WBP & Kolkata Police Constable 4-Book Target Success Combo',
+    description: 'Complete Preparation Package for WBP & KP Police Constable/SI Exams. Covers GK, Bengali, Reasoning, Elementary Mathematics, and last 10 years solved question papers.',
+    price: 649,
+    oldPrice: 1100,
+    stock: 18,
+    img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+    category: 'WBP & Police Exam',
+    targetClass: 'WBP / KP',
+    rating: 5.0,
+    reviewsCount: 32,
+    isCombo: true,
+    comboBadge: 'POLICE COMBO • SAVE 41%',
+    comboItems: [
+      'WBP & KP Full Syllabus General Knowledge Booster',
+      'Shortcut Math & Reasoning Solved Guide',
+      'Bengali Language & Current Affairs 2026',
+      '15 Full Length Practice Mock Tests with OMR Sheets',
+    ],
+  },
+  {
+    id: 3,
+    title: 'WB Primary TET & CTET Complete Child Development & Pedagogy',
+    description: 'Special Comprehensive Guide for West Bengal Primary TET and CTET aspirants. Thorough Child Development, Bengali, English, Math, and EVS pedagogy with previous years question analysis.',
+    price: 380,
+    oldPrice: 550,
+    stock: 10,
+    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80',
+    category: 'Primary TET & Teaching',
+    targetClass: 'TET / CTET',
+    rating: 4.8,
+    reviewsCount: 19,
+  },
+  {
+    id: 4,
+    title: 'Student Deluxe Stationery Kit (Notebooks, Pens & Study Combo)',
+    description: 'All-in-one Student Stationery Kit: Includes 5 Hardcover Premium Ruled Notebooks, 10 Smooth Gel & Ball Pens, Geometry Box, Pastel Highlighters, and Sticky Notes Bundle.',
+    price: 349,
+    oldPrice: 550,
+    stock: 25,
+    img: 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&auto=format&fit=crop&q=80',
+    category: 'Stationery & Study Kit',
+    targetClass: 'All Students',
+    rating: 4.9,
+    reviewsCount: 29,
+    isCombo: true,
+    comboBadge: 'STUDENT KIT • SAVE 36%',
+    comboItems: [
+      '5 x 120-Page Long Exercise Ruled Notebooks',
+      'Pack of 10 Smooth Flow Blue/Black Ball & Gel Pens',
+      'Precision Mathematical Geometry Instrument Box',
+      'Set of 4 Pastel Fluorescent Highlighters & Sticky Notes',
+    ],
+  },
+  {
+    id: 5,
+    title: 'Islamic History & Life of Holy Prophet (Seerat & Islamic History)',
+    description: 'Authentic biography of Prophet Muhammad (PBUH) and inspiring historical narratives from the golden era of Islam. Beautiful standard edition with high quality binding.',
+    price: 299,
+    oldPrice: 450,
+    stock: 14,
+    img: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=600&auto=format&fit=crop&q=80',
+    category: 'Islamic Books',
+    targetClass: 'Islamic & Religion',
+    rating: 5.0,
+    reviewsCount: 41,
+  },
+  {
+    id: 6,
+    title: 'Class 11 & 12 Higher Secondary All-in-One Science & Arts Guides',
+    description: 'Standard reference books and solution guides for WBCHSE Class 11 and 12 students. Topic-wise explanations, previous 5 years HS papers with step-by-step solutions.',
+    price: 499,
+    oldPrice: 700,
+    stock: 12,
+    img: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600&auto=format&fit=crop&q=80',
+    category: 'Class 11-12 (HS)',
+    targetClass: 'Class 11-12',
+    rating: 4.7,
+    reviewsCount: 16,
+  },
+  {
+    id: 7,
+    title: 'WBCS Prelims & Mains General Studies Manual (Complete Guide)',
+    description: 'Comprehensive Indian History, Geography of India & West Bengal, Indian Polity, Economy, and Science & Tech for WBCS aspirants.',
+    price: 699,
+    oldPrice: 990,
+    stock: 8,
+    img: 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=600&auto=format&fit=crop&q=80',
+    category: 'WBCS & PSC Exam',
+    targetClass: 'WBCS',
+    rating: 4.9,
+    reviewsCount: 22,
+  },
+  {
+    id: 8,
+    title: 'Timeless Classic Novels & Story Masterpieces Collection',
+    description: 'Collection of classic masterpieces by Rabindranath Tagore, Sarat Chandra Chattopadhyay, Bibhutibhushan Bandyopadhyay, and Bankim Chandra in elegant print editions.',
+    price: 399,
+    oldPrice: 600,
+    stock: 9,
+    img: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&auto=format&fit=crop&q=80',
+    category: 'Literature & Novels',
+    targetClass: 'Literature',
+    rating: 4.9,
+    reviewsCount: 18,
+  }
+];
+
+export const defaultReviews: BookReview[] = [
+  {
+    id: 'rev_1',
+    bookId: 1,
+    customerName: 'Tanmoy Mukherjee (Hooghly)',
+    customerPhone: '9830123456',
+    rating: 5,
+    comment: 'Outstanding book and suggestion set for Class 10 Madhyamik! Received the parcel within 3 days. Book print quality and binding are excellent. Very secure bubble packaging.',
+    date: '22/08/2026',
+    isVerifiedBuyer: true,
+    photos: [
+      'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&auto=format&fit=crop&q=80'
+    ]
+  },
+  {
+    id: 'rev_2',
+    bookId: 2,
+    customerName: 'Rahim Sheikh (Murshidabad)',
+    customerPhone: '8910123456',
+    rating: 5,
+    comment: 'Best 4-book combo set for WBP police exam! Got high quality books at very affordable price. Unboxing photo attached. Thanks to Online Library store!',
+    date: '20/08/2026',
+    isVerifiedBuyer: true,
+    photos: [
+      'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&auto=format&fit=crop&q=80'
+    ]
+  },
+  {
+    id: 'rev_3',
+    bookId: 4,
+    customerName: 'Priya Das (Burdwan)',
+    customerPhone: '7003123456',
+    rating: 5,
+    comment: 'The quality of the notebooks and pens in this stationery kit is top notch. Free fast delivery. Perfect combo for students.',
+    date: '19/08/2026',
+    isVerifiedBuyer: true,
+    photos: [
+      'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=400&auto=format&fit=crop&q=80'
+    ]
+  },
+  {
+    id: 'rev_4',
+    bookId: 5,
+    customerName: 'Mohammad Faruk (Kolkata)',
+    customerPhone: '8013123456',
+    rating: 5,
+    comment: 'MashaAllah! The language and binding of this Islamic book are wonderful. Delivered safely within 2 days of ordering.',
+    date: '18/08/2026',
+    isVerifiedBuyer: true,
+  }
+];

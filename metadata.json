@@ -1,0 +1,6 @@
+{
+  "name": "Online Library - Book Store",
+  "description": "Online Library and Book Store web application with book catalog, interactive WhatsApp & UPI order booking, customer profiles, banner slider, and admin panel.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Books collection - public read, admin write/create/delete
+    match /books/{bookId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Banners collection - public read, admin write
+    match /banners/{bannerId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Settings collection - public read, admin write
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Reviews collection - public read, customer submit, admin delete
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Orders collection - customer submit order & track order, admin update status
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Registered users collection - customer profile sync, admin view
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Admins and staff collection
+    match /admins/{adminId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Analytics and logs
+    match /analytics/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

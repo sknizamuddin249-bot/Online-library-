@@ -1,0 +1,157 @@
+{
+  "entities": {
+    "Book": {
+      "title": "Book",
+      "description": "Book catalog entity in the online store",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "oldPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "img": { "type": "string" },
+        "category": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewsCount": { "type": "number" }
+      },
+      "required": ["id", "title", "price", "stock", "img"]
+    },
+    "Banner": {
+      "title": "Banner",
+      "description": "Promotional banner slide on home page",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "img": { "type": "string" },
+        "title": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "required": ["id", "img"]
+    },
+    "StoreSettings": {
+      "title": "StoreSettings",
+      "description": "Store configuration, contact information and layout parameters",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "sub": { "type": "string" },
+        "logoImg": { "type": "string" },
+        "primaryColor": { "type": "string" },
+        "accentColor": { "type": "string" },
+        "bgColor": { "type": "string" },
+        "upiId": { "type": "string" },
+        "upiName": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "email": { "type": "string" },
+        "facebookUrl": { "type": "string" },
+        "instagramUrl": { "type": "string" },
+        "announcement": { "type": "string" },
+        "showAnnouncement": { "type": "boolean" }
+      },
+      "required": ["name", "primaryColor", "accentColor"]
+    },
+    "BookReview": {
+      "title": "BookReview",
+      "description": "Customer feedback and book ratings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "bookId": { "type": "number" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "date": { "type": "string" },
+        "isVerifiedBuyer": { "type": "boolean" }
+      },
+      "required": ["id", "bookId", "customerName", "rating", "comment", "date"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order details, purchased books and tracking status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "date": { "type": "string" },
+        "bookTitle": { "type": "string" },
+        "price": { "type": "number" },
+        "oldPrice": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "customerName": { "type": "string" },
+        "village": { "type": "string" },
+        "po": { "type": "string" },
+        "district": { "type": "string" },
+        "pincode": { "type": "string" },
+        "landmark": { "type": "string" },
+        "phone": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "paymentStatus": { "type": "string" },
+        "orderStatus": { "type": "string" },
+        "couponCode": { "type": "string" },
+        "couponDiscount": { "type": "number" },
+        "coinsUsed": { "type": "number" },
+        "coinsDiscount": { "type": "number" },
+        "coinsEarned": { "type": "number" },
+        "courierName": { "type": "string" },
+        "trackingNumber": { "type": "string" },
+        "trackingUrl": { "type": "string" }
+      },
+      "required": ["id", "date", "bookTitle", "price", "totalAmount", "customerName", "phone", "paymentMethod"]
+    },
+    "RegisteredUser": {
+      "title": "RegisteredUser",
+      "description": "Customer account profile, super coins balance and order history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "avatar": { "type": "string" },
+        "googleUid": { "type": "string" },
+        "password": { "type": "string" },
+        "village": { "type": "string" },
+        "po": { "type": "string" },
+        "district": { "type": "string" },
+        "pincode": { "type": "string" },
+        "coins": { "type": "number" },
+        "totalOrdersCount": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "registeredAt": { "type": "string" },
+        "lastLoginAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    }
+  },
+  "firestore": {
+    "/books/{bookId}": {
+      "schema": "Book",
+      "description": "Catalog of available books"
+    },
+    "/banners/{bannerId}": {
+      "schema": "Banner",
+      "description": "Store hero and promotional banners"
+    },
+    "/settings/{docId}": {
+      "schema": "StoreSettings",
+      "description": "Global store configuration and customization"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "BookReview",
+      "description": "Customer reviews and star ratings"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders and fulfillment records"
+    },
+    "/users/{userId}": {
+      "schema": "RegisteredUser",
+      "description": "Registered customer accounts and coin balances"
+    }
+  }
+}
